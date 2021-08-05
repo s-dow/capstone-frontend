@@ -24,7 +24,7 @@ export const HomePage = () => {
               className="featuredLink"
               href="https://www.boardandbarcharcuterie.com/"
             >
-              boardandbarcharcuterie.com
+              boardandbarcharcuterie.com!
             </a>
           </p>
         </div>
