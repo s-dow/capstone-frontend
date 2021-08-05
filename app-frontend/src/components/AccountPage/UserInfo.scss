@@ -1,0 +1,37 @@
+.saveChanges {
+  background-color: #4c544c;
+  color: #dedad9;
+  border-radius: 5px 10px 5px 10px;
+  height: 45px;
+  width: 75%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  opacity: 80%;
+  margin-top: 40px;
+}
+
+.accountPageInfo {
+    color: rgba(0,0,0,0.5);
+    border-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 5px 5px 5px 5px;
+    width: 100%
+    
+}
+
+.acctLabel {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-family: "Chivo", sans-serif;
+    font-weight: 300;
+    
+}
+
+.acctLabel__Name {
+    font-size: 32px;
+    font-family: "Chivo", sans-serif;
+    font-weight: 300;
+}

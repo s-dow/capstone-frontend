@@ -1,0 +1,167 @@
+.navbar {
+  width: 100%;
+  opacity: 85%;
+  overflow: visible;
+  margin-bottom: 30px;
+  z-index: 1;
+}
+
+.centerRow {
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+  color: #dedad9;
+}
+
+.titleRow {
+  padding-top: 10px;
+}
+
+.searchLogo {
+  // padding-right: 10px;
+  font-size: 15px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.accountLogo {
+  padding-right: 12px;
+  font-size: 17px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+}
+
+.navbarColor {
+  background-color: #4c544c;
+}
+.nav-item {
+  font-family: "Chivo", sans-serif;
+}
+.nav-link {
+  color: #dedad9;
+}
+.nav-link:focus {
+  color: #dedad9;
+}
+.nav-link:hover {
+  color: #dedad9;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: #dedad9;
+  border: 1px solid #dedad9;
+}
+.regFont {
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: #dedad9;
+}
+
+.boldFont {
+  font-family: "Chivo", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: #dedad9;
+}
+
+h1,
+.logo {
+  // text-align: center;
+  padding: 4px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+.bottomLink {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/* stroke - https://codepen.io/maheshambure21/pen/QwXaRw - MAHESH AMBURE*/
+nav.stroke ul li {
+  position: relative;
+}
+nav.stroke ul li:not(.iconRow):after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li:hover:after {
+  width: 100%;
+}
+
+nav ul li,
+nav ul li:after,
+nav ul li:before {
+  transition: all 0.5s;
+}
+
+/* SEARCH BAR https://codepen.io/mort3za/pen/dPyjMv */
+
+#searchform {
+  padding-right: 3px;
+  margin-top: 0;
+}
+
+input.search-text {
+  color: #222;
+  z-index: 5;
+  transition: width 0.5s, background 0.3s ease, border 0.3s;
+  height: 25px;
+  width: 0;
+  margin: 0;
+  padding: 5px 0 5px 40px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  background: url("../assets/images/Search.png") no-repeat 9px center
+    transparent;
+  background-size: 15px;
+}
+input.search-text:focus {
+  z-index: 3;
+  width: 180px;
+  border: 1px solid #dedad9;
+  background-color: #dedad9;
+  outline: none;
+  cursor: auto;
+  padding-right: 20px;
+}
+
+input.search-submit {
+  z-index: 4;
+  left: 30px;
+  right: 0px;
+  width: 45px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background: none;
+}
+
+/* DROPDOWN */
+
+.dropdown-menu {
+  opacity: 90%;
+  width: 220px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}

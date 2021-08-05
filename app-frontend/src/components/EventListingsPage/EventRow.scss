@@ -1,0 +1,57 @@
+.content {
+  padding: 16px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.listImg {
+  width: 45%;
+  padding-left: 40px;
+}
+
+.listingRow {
+  background-color: rgba(247, 250, 244, 0.4);
+  margin-bottom: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+/* MAIN */
+
+.mainContent {
+  padding: 40px;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.regFont {
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: #dedad9;
+}
+
+.boldFont {
+  font-family: "Chivo", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: #dedad9;
+}
+
+h1,
+.logo {
+  text-align: center;
+  padding: 4px;
+  letter-spacing: 1.5px;
+}
+
+h2,
+h5 {
+  font-family: "Chivo", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: #dedad9;
+}
