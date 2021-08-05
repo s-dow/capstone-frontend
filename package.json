@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "fullcalendar": "^5.7.0"
+  },
+  "devDependencies": {
+    "cypress": "^8.1.0",
+    "react-scripts": "^4.0.3"
+  }
+}
