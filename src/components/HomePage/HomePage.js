@@ -12,6 +12,7 @@ export const HomePage = () => {
             alt="heart of syracuse"
             className="bannerImage"
           ></img>
+          <span className="bannerText">Hello Syracuse!</span>
         </div>
       </div>
       <div className="featuredContent row">

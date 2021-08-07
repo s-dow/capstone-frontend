@@ -9,8 +9,9 @@
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
-.intro {
+.bannerText {
   font-size: 30px;
+  padding: 20px;
 }
 
 .bannerContent,
@@ -30,13 +31,13 @@
 
 .featuredContent {
   font-size: 30px;
+  height: 300px;
 
   h3 {
     font-size: 45px;
   }
 }
 .BandB {
-  width: 100%;
   height: 100%;
   background-color: rgba(247, 250, 244, 0.4);
   padding: 0px;
@@ -48,6 +49,7 @@
 
 .feature {
   height: 100%;
+  width: 50%;
 }
 
 .featuredLink {
