@@ -32,7 +32,7 @@ export const EventPage = (props) => {
   return (
     <main className="content">
       <div className="mainContent container-fluid d-flex justify-content-around flex-wrap">
-        <section className="feature col-lg-4 leftSide">
+        <section className="feature col-lg-3 leftSide">
           <img
             className="featureImg img-fluid rounded"
             src={eventImage}

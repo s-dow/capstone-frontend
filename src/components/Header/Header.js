@@ -74,10 +74,7 @@ export const Header = (props) => {
                     >
                       Events
                     </a>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="navbarDropdown"
-                    >
+                    <ul className="dropdown-menu">
                       <li>
                         <a
                           className="dropdown-item"
@@ -119,10 +116,7 @@ export const Header = (props) => {
                     >
                       Dining
                     </a>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="navbarDropdown"
-                    >
+                    <ul className="dropdown-menu">
                       <li>
                         <a className="dropdown-item" href="/restaurants">
                           Local Restaurants & Bars
@@ -149,10 +143,7 @@ export const Header = (props) => {
                     >
                       Music
                     </a>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="navbarDropdown"
-                    >
+                    <ul className="dropdown-menu">
                       <li>
                         <a className="dropdown-item" href="/livemusic">
                           Live Music
