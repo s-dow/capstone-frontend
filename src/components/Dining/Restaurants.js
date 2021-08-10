@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
+
+const env = runtimeEnv();
 
 export const Restaurants = () => {
   const [restaurants, setRestaurants] = useState(null);
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`http://localhost:3001/restaurants`, {
+      const response = await fetch(env.REACT_APP_BACKEND_URL + "/restaurants", {
         method: "GET",
         headers: {
           email: localStorage.email,
