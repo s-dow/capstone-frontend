@@ -1,6 +1,9 @@
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import "./SignIn.scss";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
+
+const env = runtimeEnv();
 
 export const SignIn = (props) => {
   const logIn = async (event) => {
@@ -8,7 +11,7 @@ export const SignIn = (props) => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    const response = await fetch(`http://localhost:3001/login`, {
+    const response = await fetch(env.REACT_APP_BACKEND_URL + "/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

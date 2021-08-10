@@ -2,6 +2,9 @@ import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 
 import "./Registration.scss";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
+
+const env = runtimeEnv();
 
 export const Registration = (props) => {
   const signUp = async (event) => {
@@ -14,7 +17,7 @@ export const Registration = (props) => {
     if (password !== confirmPassword) {
       alert("Passwords do not match. Please re-enter your password.");
     } else {
-      const response = await fetch(`http://localhost:3001/signup`, {
+      const response = await fetch(env.REACT_APP_BACKEND_URL + "/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
