@@ -9,7 +9,7 @@ export const EventRow = (props) => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`http://localhost:3001/events`, {
+      const response = await fetch(`https://localhost:3001/events`, {
         method: "GET",
       });
       const data = await response.json();
