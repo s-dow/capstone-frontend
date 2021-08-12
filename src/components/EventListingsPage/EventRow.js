@@ -3,6 +3,9 @@ import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "./EventRow.scss";
 import { useState, useEffect } from "react";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
+
+const env = runtimeEnv();
 
 export const EventRow = (props) => {
   const [events, setEvents] = useState(null);
