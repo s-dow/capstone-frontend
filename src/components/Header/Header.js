@@ -40,7 +40,10 @@ export const Header = (props) => {
                     </form>
                   </li>
                   <li className="iconRow">
-                    {localStorage.email && localStorage.password ? (
+                    <Link className="accountLogo" to="/account">
+                      <Icon icon={faUserCircle} />
+                    </Link>
+                    {/* {localStorage.email && localStorage.password ? (
                       <Link className="accountLogo" to="/account">
                         <Icon icon={faUserCircle} />
                       </Link>
@@ -48,7 +51,7 @@ export const Header = (props) => {
                       <Link className="accountLogo" to="/signin">
                         <Icon icon={faUserCircle} />
                       </Link>
-                    )}
+                    )} */}
                   </li>
                 </ul>
               </div>

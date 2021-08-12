@@ -9,12 +9,12 @@ export const EventRow = (props) => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`https://localhost:3001/events`, {
+      const response = await fetch(env.REACT_APP_BACKEND_URL + "/restaurants", {
         method: "GET",
       });
       const data = await response.json();
-      console.log(data);
-      setEvents(data);
+      console.log(data.events);
+      setEvents(data.events);
     })();
   }, []);
 

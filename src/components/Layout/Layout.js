@@ -6,11 +6,12 @@ import { About } from "../About/About";
 import { AccountPage } from "../AccountPage/AccountPage";
 import { HomePage } from "../HomePage/HomePage";
 import { Restaurants } from "../Dining/Restaurants";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 import "./Layout.scss";
 import "../assets/images/bg.jpg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { SignInRegistration } from "../SignInRegistration/SignInRegistration";
+// import { SignInRegistration } from "../SignInRegistration/SignInRegistration";
 
 export const Layout = (props) => {
   return (
@@ -28,15 +29,24 @@ export const Layout = (props) => {
           <Route path="/events">
             <EventListingsPage />
           </Route>
-          <Route path="/signin">
+          {/* <Route path="/signin">
             <SignInRegistration />
-          </Route>
-          <Route path="/account">
-            <AccountPage />
-          </Route>
+          </Route> */}
           <Route path="/restaurants">
             <Restaurants />
           </Route>
+
+          <Route path="/account">
+            <Auth0Provider
+              domain="hellosyr.us.auth0.com"
+              clientId="9QtaZGHlzb3fhbBvkAve9Mrmuv1jpYef"
+              redirectUri={window.location.origin}
+              scope="read:current_user"
+            >
+              <AccountPage />
+            </Auth0Provider>
+          </Route>
+
           <Route path="/">
             <HomePage />
           </Route>

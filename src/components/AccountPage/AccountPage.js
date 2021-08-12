@@ -9,11 +9,24 @@ import {
 import { faCog, faSignOutAlt, faPen } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { UserInfo } from "./UserInfo";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const AccountPage = (props) => {
+  const { user, isAuthenticated, isLoading, loginWithRedirect, logout } =
+    useAuth0();
+
+  if (isLoading) {
+    return <p> Loading... </p>;
+  }
+  if (!isAuthenticated) {
+    loginWithRedirect();
+  }
+
   return (
     <div className="container-fluid account">
       <div className="row justify-content-around">
+        {/* <p>{JSON.stringify(user)}</p>
+        <img src={user["picture"]} /> */}
         <section className="accountOptions">
           <div className="col">
             <div className="row text-center">
@@ -59,9 +72,7 @@ export const AccountPage = (props) => {
               <button
                 className="logOut"
                 onClick={() => {
-                  delete localStorage.password;
-                  delete localStorage.email;
-                  window.location = "/";
+                  logout();
                 }}
               >
                 <Icon icon={faSignOutAlt} />
