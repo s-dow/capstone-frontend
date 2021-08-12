@@ -12,7 +12,7 @@ export const EventRow = (props) => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(env.REACT_APP_BACKEND_URL + "/restaurants", {
+      const response = await fetch(env.REACT_APP_BACKEND_URL + "/events", {
         method: "GET",
       });
       const data = await response.json();
