@@ -72,7 +72,7 @@ export const AccountPage = (props) => {
               <button
                 className="logOut"
                 onClick={() => {
-                  logout(env.REACT_APP_FRONTEND_URL);
+                  logout({ returnTo: env.REACT_APP_FRONTEND_URL });
                 }}
               >
                 <Icon icon={faSignOutAlt} />
