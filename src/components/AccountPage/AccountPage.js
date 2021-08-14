@@ -9,6 +9,9 @@ import { faCog, faSignOutAlt, faPen } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { UserInfo } from "./UserInfo";
 import { useAuth0 } from "@auth0/auth0-react";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
+
+const env = runtimeEnv();
 
 export const AccountPage = (props) => {
   const { user, isAuthenticated, isLoading, loginWithRedirect, logout } =
@@ -69,7 +72,7 @@ export const AccountPage = (props) => {
               <button
                 className="logOut"
                 onClick={() => {
-                  logout();
+                  logout(env.REACT_APP_FRONTEND_URL);
                 }}
               >
                 <Icon icon={faSignOutAlt} />
