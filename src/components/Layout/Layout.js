@@ -7,11 +7,13 @@ import { AccountPage } from "../AccountPage/AccountPage";
 import { HomePage } from "../HomePage/HomePage";
 import { Restaurants } from "../Dining/Restaurants";
 import { Auth0Provider } from "@auth0/auth0-react";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
 
 import "./Layout.scss";
 import "../assets/images/bg.jpg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { SignInRegistration } from "../SignInRegistration/SignInRegistration";
+
+const env = runtimeEnv();
 
 export const Layout = (props) => {
   return (
@@ -29,9 +31,6 @@ export const Layout = (props) => {
           <Route path="/events">
             <EventListingsPage />
           </Route>
-          {/* <Route path="/signin">
-            <SignInRegistration />
-          </Route> */}
           <Route path="/restaurants">
             <Restaurants />
           </Route>
@@ -40,7 +39,7 @@ export const Layout = (props) => {
             <Auth0Provider
               domain="hellosyr.us.auth0.com"
               clientId="9QtaZGHlzb3fhbBvkAve9Mrmuv1jpYef"
-              redirectUri={window.location.origin}
+              redirectUri={env.REACT_APP_FRONTEND_URL + "/account"}
               scope="read:current_user"
             >
               <AccountPage />

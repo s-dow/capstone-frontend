@@ -1,4 +1,3 @@
-import DefaultUser from "../assets/images/DefaultUser.jpg";
 import "./AccountPage.scss";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,8 +24,6 @@ export const AccountPage = (props) => {
   return (
     <div className="container-fluid account">
       <div className="row justify-content-around">
-        {/* <p>{JSON.stringify(user)}</p>
-        <img src={user["picture"]} /> */}
         <section className="accountOptions">
           <div className="col">
             <div className="row text-center">
@@ -87,7 +84,7 @@ export const AccountPage = (props) => {
               <div className="col-2">
                 <div className="imgContainer">
                   <img
-                    src={DefaultUser}
+                    src={user["picture"]}
                     alt="default user"
                     className="rounded-circle userImg"
                   ></img>
@@ -97,7 +94,7 @@ export const AccountPage = (props) => {
                 </div>
               </div>
               <div className="col-9">
-                <UserInfo />
+                <UserInfo user={user} />
               </div>
             </div>
           </div>
