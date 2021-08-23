@@ -40,6 +40,7 @@ export const Layout = (props) => {
               domain="hellosyr.us.auth0.com"
               clientId="9QtaZGHlzb3fhbBvkAve9Mrmuv1jpYef"
               redirectUri={env.REACT_APP_FRONTEND_URL + "/account"}
+              audience="https://sara-capstone-backend.herokuapp.com"
               scope="read:current_user"
             >
               <AccountPage />

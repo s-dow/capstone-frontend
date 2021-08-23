@@ -14,7 +14,7 @@ export const Footer = (props) => {
     <footer>
       <div className="container-fluid">
         <div className="row justify-content-around">
-          <div className="col-md-6 container-fluid">
+          <div className=" col-xs-2 col-md-6 container-fluid">
             <div className="row">
               <h5 className="regFont" style={{ marginBottom: "0px" }}>
                 Hello
@@ -47,17 +47,17 @@ export const Footer = (props) => {
                     </Link>
                   </div>
                   <div className="nav-item row">
-                    <Link to="/events" className="nav-links">
-                      Food Trucks
+                    <Link to="/restaurants" className="nav-links">
+                      Dining
                     </Link>
                   </div>
                   <div className="nav-item row">
                     <Link
-                      to="/events"
+                      to="/music"
                       style={{ marginBottom: "20px" }}
                       className="nav-links"
                     >
-                      Past Events
+                      Music
                     </Link>
                   </div>
                   <div className="nav-item row">
@@ -73,7 +73,7 @@ export const Footer = (props) => {
                 <div className="col-sm-4">
                   <div className="nav-item row">
                     <Link
-                      to="/"
+                      to="/account"
                       style={{ fontWeight: "bold", marginBottom: "20px" }}
                       className="nav-links"
                     >
@@ -116,7 +116,7 @@ export const Footer = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-md-6 contactFormFooter">
+          <div className=" col-xs-2 col-md-4 contactFormFooter">
             <section>
               <h2 className="boxTitle d-flex justify-content-center">
                 Get in Touch
@@ -124,7 +124,11 @@ export const Footer = (props) => {
               <p className=" d-flex justify-content-center submitMessage">
                 Submit an event or send over your thoughts.
               </p>
-              <form id="contactForm2">
+              <form
+                id="contactForm2"
+                action="https://formspree.io/f/xbjqpopg"
+                method="POST"
+              >
                 <div className="form-group row justify-content-center">
                   <label
                     htmlFor="inputName3"
@@ -135,6 +139,7 @@ export const Footer = (props) => {
                   <div className="col-sm-9">
                     <input
                       type="name"
+                      name="name"
                       className="form-control"
                       id="inputName3"
                       placeholder="Name"
@@ -155,6 +160,7 @@ export const Footer = (props) => {
                       className="form-control"
                       id="inputEmail3"
                       placeholder="Email"
+                      name="email"
                     />
                     <small></small>
                   </div>
@@ -167,6 +173,7 @@ export const Footer = (props) => {
                     className="form-control textArea2 col-sm-10"
                     placeholder="Write a message!"
                     rows="2"
+                    name="message"
                   ></textarea>
                 </div>
                 <div className="form-group row">

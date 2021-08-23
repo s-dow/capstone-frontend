@@ -5,6 +5,23 @@
   z-index: 1;
 }
 
+.navbar-toggler-icon {
+  color: #dedad9;
+}
+
+.navbar-toggler {
+  border: none;
+  color: #dedad9;
+  padding-top: 5px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .centerRow {
   width: 100%;
 }

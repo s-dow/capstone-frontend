@@ -36,7 +36,7 @@ export const Restaurants = () => {
             return (
               <div
                 className="card"
-                style={{ margin: "10px" }}
+                style={{ margin: "10px", minWidth: "150px" }}
                 key={restaurant.restaurantID}
               >
                 <img src={eventImage} className="card-img-top" alt="..."></img>
@@ -73,7 +73,7 @@ export const Restaurants = () => {
                 <div className="card-body text-center">
                   <button className="siteLink">
                     <a href={restaurant.link} className="card-link">
-                      Visit the {restaurant.name} Website!
+                      Visit {restaurant.name}!
                     </a>
                   </button>
                 </div>

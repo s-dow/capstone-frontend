@@ -1,15 +1,34 @@
 import React from "react";
 import "./Header.scss";
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
+import runtimeEnv from "@mars/heroku-js-runtime-env";
 
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faUserCircle, faGripLines } from "@fortawesome/free-solid-svg-icons";
+
+const env = runtimeEnv();
 
 export const Header = (props) => {
+  // const [search, setSearch] = useState("");
+
+  // const searchEvents = async (event) => {
+  //   event.preventDefault();
+  //   const response = await fetch(env.REACT_APP_BACKEND_URL + "/search", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ searchQuery: search }),
+  //   });
+  //   const data = await response.json();
+  //   // setEvents(data.events);
+  // };
+
   return (
     <header>
-      <nav className="navbar navbar-expand-md stroke navbarColor">
+      <nav className="navbar navbar-expand-lg stroke navbarColor">
         <div className="container-fluid">
           <div className="centerRow" id="mainNav">
             <div className="row titleRow">
@@ -21,21 +40,29 @@ export const Header = (props) => {
                 </Link>
               </div>
               <div className="col-3">
-                <ul className="navbar-nav justify-content-end">
+                <ul
+                  d="navbarSupportedContent"
+                  className="navbar-nav collapse navbar-collapse justify-content-end"
+                >
                   <li className="iconRow">
                     <form
                       action="/"
                       role="search"
                       id="searchform"
                       className="search-form"
+                      //onSubmit={searchEvents()}
                     >
                       <input type="submit" value="" className="search-submit" />
                       <input
                         type="search"
                         name="search"
+                        //value={search}
                         className="search-text searchLogo"
                         placeholder="Search"
                         autoComplete="off"
+                        //onChange={(evt) => {
+                        //  setSearch(evt.target.value);
+                        //}}
                       />
                     </form>
                   </li>
@@ -58,8 +85,24 @@ export const Header = (props) => {
             </div>
             <hr></hr>
             <div className="row">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon">
+                  <Icon icon={faGripLines} />
+                </span>
+              </button>
               <div className="col">
-                <ul className="navbar-nav mr-auto ml-auto justify-content-center">
+                <ul
+                  id="navbarSupportedContent"
+                  className="navbar-nav collapse navbar-collapse  mr-auto ml-auto justify-content-center"
+                >
                   <li className="nav-item bottomLink mr-md-7 aboutLink">
                     <Link className="nav-link" to="/about">
                       About
@@ -155,11 +198,6 @@ export const Header = (props) => {
                       <li>
                         <a className="dropdown-item" href="/festivals">
                           Festivals
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="/openmic">
-                          Open Mic
                         </a>
                       </li>
                     </ul>

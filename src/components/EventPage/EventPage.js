@@ -1,6 +1,7 @@
 import "./EventPage.scss";
 import eventImage from "../assets/images/slide3.jpg";
 import { Link } from "react-router-dom";
+import { Popup } from "./Popup";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faLink, faShare } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -9,30 +10,63 @@ import {
   faCheckCircle,
   faHeart,
 } from "@fortawesome/free-regular-svg-icons";
-// import {
-//   EmailShareButton,
-//   FacebookShareButton,
-//   TwitterShareButton,
-// } from "react-share";
-// import { EmailIcon, FacebookIcon, TwitterIcon } from "react-share";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+} from "react-share";
+import { EmailIcon, FacebookIcon, TwitterIcon, RedditIcon } from "react-share";
+import { useState } from "react";
 
 export const EventPage = (props) => {
-  // const shareClicked = (props) => {
-  //   return (
-  //     <FacebookShareButton
-  //       url={"http://www.google.com"}
-  //       quote={"Hello Syr"}
-  //       hashtag="#hellosyr"
-  //     >
-  //       {/* <FacebookIcon size={36} /> */}
-  //     </FacebookShareButton>
-  //   );
-  // };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const shareClicked = (props) => {
+    const path = window.location.pathname;
+
+    return (
+      <div>
+        <TwitterShareButton
+          url={`hellosyr.com${path}`}
+          quote={"Check this out!"}
+          hashtag="#hellosyr"
+        >
+          <TwitterIcon className="shareIcon" size={36} />
+        </TwitterShareButton>
+        <FacebookShareButton
+          url={`hellosyr.com${path}`}
+          quote={"Check this out!"}
+          hashtag="#hellosyr"
+        >
+          <FacebookIcon className="shareIcon" size={36} />
+        </FacebookShareButton>
+        <EmailShareButton
+          url={`hellosyr.com${path}`}
+          quote={"Check this out!"}
+          hashtag="#hellosyr"
+        >
+          <EmailIcon className="shareIcon" size={36} />
+        </EmailShareButton>
+        <RedditShareButton
+          url={`hellosyr.com${path}`}
+          quote={"Check this out!"}
+          hashtag="#hellosyr"
+        >
+          <RedditIcon className="shareIcon" size={36} />
+        </RedditShareButton>
+      </div>
+    );
+  };
 
   return (
     <main className="content">
       <div className="mainContent container-fluid d-flex justify-content-around flex-wrap">
-        <section className="feature col-lg-3 leftSide">
+        <section className="feature col-2 leftSide">
           <img
             className="featureImg img-fluid rounded"
             src={eventImage}
@@ -89,9 +123,15 @@ export const EventPage = (props) => {
               </button>
             </div>
             <div className="col text-center">
-              <button className="userIntButton share">
-                <Icon icon={faShare} /> &nbsp;&nbsp;Share with a Friend
+              <button onClick={togglePopup} className="userIntButton share">
+                <Icon icon={faShare} /> &nbsp;&nbsp;Share
               </button>
+              {isOpen && (
+                <Popup
+                  content={<>{shareClicked()}</>}
+                  handleClose={togglePopup}
+                />
+              )}
             </div>
           </div>
         </section>
@@ -118,7 +158,7 @@ export const EventPage = (props) => {
           </div>
           <div className="map-responsive">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.5917256446905!2d-76.15133198440972!3d43.05002097914671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f3ba261954d5%3A0x4cc7a48f9c974ef9!2sSyracuse%20City%20Hall!5e0!3m2!1sen!2sus!4v1619917692428!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.5917256446905!2d-70.15133198440972!3d43.05002097914671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f3ba261954d5%3A0x4cc7a48f9c974ef9!2sSyracuse%20City%20Hall!5e0!3m2!1sen!2sus!4v1619917692428!5m2!1sen!2sus"
               width="400"
               height="300"
               style={{ border: "0" }}
