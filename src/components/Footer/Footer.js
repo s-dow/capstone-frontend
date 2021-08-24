@@ -42,7 +42,7 @@ export const Footer = (props) => {
                     </Link>
                   </div>
                   <div className="nav-item row">
-                    <Link to="/events" className="nav-links">
+                    <Link to="/calendar" className="nav-links">
                       Calendar
                     </Link>
                   </div>
@@ -53,7 +53,7 @@ export const Footer = (props) => {
                   </div>
                   <div className="nav-item row">
                     <Link
-                      to="/music"
+                      to="/livemusic"
                       style={{ marginBottom: "20px" }}
                       className="nav-links"
                     >

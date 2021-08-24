@@ -1,14 +1,14 @@
 import React from "react";
 import "./Header.scss";
-import { useState } from "react";
+// import { useState } from "react";
 
 import { Link } from "react-router-dom";
-import runtimeEnv from "@mars/heroku-js-runtime-env";
+// import runtimeEnv from "@mars/heroku-js-runtime-env";
 
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faUserCircle, faGripLines } from "@fortawesome/free-solid-svg-icons";
 
-const env = runtimeEnv();
+// const env = runtimeEnv();
 
 export const Header = (props) => {
   // const [search, setSearch] = useState("");

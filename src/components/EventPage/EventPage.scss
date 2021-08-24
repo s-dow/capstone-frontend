@@ -42,12 +42,12 @@ h5 {
 
 .description {
   margin-top: 20px;
+  margin-bottom: 85px;
 }
 
 /* MAP */
 
 .map-responsive {
-  overflow: hidden;
   padding-top: 20%;
   padding-bottom: 40%;
   margin-top: 50px;
@@ -72,9 +72,11 @@ h5 {
 .timeInfo,
 .dateInfo,
 .businessInfo {
-  border-bottom: solid black 1px;
-  padding: 10px;
+  border-bottom: solid #dedad9 1px;
+  padding: 20px;
   font-family: "Chivo", sans-serif;
+  background-color: rgba(76, 84, 76, 0.8);
+  color: #dedad9;
 }
 
 a {
@@ -88,14 +90,17 @@ a:hover {
   cursor: pointer;
 }
 
-#busLink,
-#calLink {
-  color: black;
+#busLink {
+  color: #dedad9;
   text-decoration: none;
 }
 
+#calLink {
+  color: black;
+}
+
 #busLink:hover {
-  color: #00a0c6;
+  color: black;
   cursor: pointer;
 }
 
@@ -131,10 +136,11 @@ a:hover {
 #calendar,
 .about {
   background-color: rgba(247, 250, 244, 0.4);
-  padding: 40px;
+  padding: 50px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  margin-top: 5px;
 }
 
 .shareIcon {
@@ -142,4 +148,8 @@ a:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.featureImg {
+  width: 100%;
 }

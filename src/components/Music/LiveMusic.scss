@@ -5,18 +5,20 @@
 }
 
 .listImg {
-  width: 70%;
-  padding: 25px;
+  size: 50%;
+  padding: 20px;
 }
 
 .listingRow {
   background-color: rgba(250, 250, 244, 0.55);
   margin-bottom: 10px;
-  padding: 20px;
+  padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  width: 90%;
 }
+
 /* MAIN */
 
 .mainContent {
@@ -63,12 +65,5 @@ h5 {
 
 .eventTitle {
   font-size: 26px;
-}
-
-.btnCol {
-  padding-right: 20px;
-}
-
-.show-link {
-  font-size: 15px;
+  padding-top: 20px;
 }

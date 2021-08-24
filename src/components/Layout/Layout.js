@@ -5,6 +5,8 @@ import { EventListingsPage } from "../EventListingsPage/EventListingsPage";
 import { About } from "../About/About";
 import { AccountPage } from "../AccountPage/AccountPage";
 import { HomePage } from "../HomePage/HomePage";
+import { Calendar } from "../../Calendar/Calendar";
+import { LiveMusic } from "../Music/LiveMusic";
 import { Restaurants } from "../Dining/Restaurants";
 import { Auth0Provider } from "@auth0/auth0-react";
 import runtimeEnv from "@mars/heroku-js-runtime-env";
@@ -33,6 +35,12 @@ export const Layout = (props) => {
           </Route>
           <Route path="/restaurants">
             <Restaurants />
+          </Route>
+          <Route path="/livemusic">
+            <LiveMusic />
+          </Route>
+          <Route path="/calendar">
+            <Calendar />
           </Route>
 
           <Route path="/account">

@@ -1,72 +1,73 @@
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
-import listingImage from "../assets/images/dining.jpeg";
+
+import "./LiveMusic.scss";
 import { Pagination } from "../Pagination/Pagination";
-import "./EventRow.scss";
+import musicImg from "../assets/images/music.jpg";
 import { useState, useEffect } from "react";
 import runtimeEnv from "@mars/heroku-js-runtime-env";
 const dateFormat = require("dateformat");
 
 const env = runtimeEnv();
 
-export const EventRow = (props) => {
-  const [events, setEvents] = useState([]);
+export const LiveMusic = () => {
+  const [music, setMusic] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [eventsPerPage] = useState(4);
+  const [eventsPerPage] = useState(6);
 
   useEffect(() => {
     (async () => {
       setLoading(true);
-      const response = await fetch(env.REACT_APP_BACKEND_URL + "/events", {
+      const response = await fetch(env.REACT_APP_BACKEND_URL + "/livemusic", {
         method: "GET",
       });
       const data = await response.json();
-      setEvents(data.events);
+      setMusic(data.music);
       setLoading(false);
     })();
   }, []);
 
   const indexOfLastEvent = currentPage * eventsPerPage;
   const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
-  const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
+  const currentMusic = music.slice(indexOfFirstEvent, indexOfLastEvent);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) {
     return <h2>Loading...</h2>;
   }
+
   return (
     <div>
       <div>
-        {currentEvents ? (
-          currentEvents.map((event) => {
+        {currentMusic ? (
+          currentMusic.map((event) => {
             return (
               <div
-                key={event.eventID}
-                className="container-fluid d-flex justify-content-around listingRow"
+                key={event.musicID}
+                className="container-fluid justify-content-between listingRow"
               >
-                <div className="row d-flex justify-content-between">
-                  <div className="col-lg-4">
+                <div className="row">
+                  <div className="col-xs-1 col-md-3">
                     <img
                       className="listImg"
-                      src={listingImage}
+                      src={musicImg}
                       alt="dinner table"
                     />
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-xs-4 col-md-7">
                     <h4 className="eventTitle">{event.title}</h4>
-                    <p className="desc">{event.description}</p>
+
                     <p className="text-center">
                       {dateFormat(event.date, "fullDate")}
                     </p>
+                    <p className="text-center">{event.time}</p>
+                    <p className="text-center">{event.location}</p>
                   </div>
-                  <div className="col-lg-2 text-end btnCol">
+                  <div className="col-xs-1 col-md-2">
                     <button className="siteLink">
-                      <a
-                        href={`/events/${event.eventID}`}
-                        className="show-link"
-                      >
+                      <a href={event.link} className="show-link">
                         More Information <Icon icon={faCaretUp} />
                       </a>
                     </button>
@@ -84,7 +85,7 @@ export const EventRow = (props) => {
       <Pagination
         paginate={paginate}
         eventsPerPage={eventsPerPage}
-        totalEvents={events.length}
+        totalEvents={music.length}
       />
     </div>
   );
