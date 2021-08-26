@@ -155,7 +155,7 @@ export const EventPage = (props) => {
                 <div className="col">
                   <div className="businessLink">
                     <Link to="www.syracuse.com" id="busLink">
-                      Visit SyracuseEvent.com!
+                      More Information
                     </Link>
                   </div>
                 </div>

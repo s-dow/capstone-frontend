@@ -47,7 +47,7 @@ export const HomePage = () => {
       <div>
         <div className="row align-items-center">
           <div className="descriptionHome col-xs-12 col-md-8">
-            <p>
+            <p className="homeDesc">
               Hello | Syr is a website dedicated to supporting local business,
               promoting community engagement, and finding you something fun to
               do this weekend!{" "}

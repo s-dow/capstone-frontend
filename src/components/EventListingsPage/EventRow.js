@@ -56,7 +56,8 @@ export const EventRow = (props) => {
                   </div>
                   <div className="col-lg-6">
                     <h4 className="eventTitle">{event.title}</h4>
-                    <p className="desc">{event.description}</p>
+                    <p className="desc text-center">{event.business}</p>
+                    <p className="desc text-center">{event.description}</p>
                     <p className="text-center">
                       {dateFormat(event.date, "fullDate")}
                     </p>
