@@ -45,7 +45,7 @@ export const HomePage = () => {
         ></hr>
       </div>
       <div>
-        <div className="row">
+        <div className="row align-items-center">
           <div className="descriptionHome col-xs-12 col-md-8">
             <p>
               Hello | Syr is a website dedicated to supporting local business,
