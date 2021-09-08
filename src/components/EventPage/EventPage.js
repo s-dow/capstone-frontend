@@ -1,5 +1,7 @@
 import "./EventPage.scss";
 import eventImage from "../assets/images/slide3.jpg";
+import bikeImg from "../assets/images/bike.jpg";
+import museumImg from "../assets/images/museum.jpg";
 
 import { Link } from "react-router-dom";
 import { Popup } from "./Popup";
@@ -84,11 +86,13 @@ export const EventPage = (props) => {
     <main className="content">
       <div className="mainContent container-fluid d-flex justify-content-around flex-wrap">
         <section className="feature col-xs-12 col-md-6 leftSide">
-          <img
-            className="featureImg img-fluid rounded"
-            src={eventImage}
-            alt="dinner plate with food"
-          />
+          {events.tag === "bike" ? (
+            <img className="rowImg" src={bikeImg}></img>
+          ) : events.tag === "museum" ? (
+            <img className="rowImg" src={museumImg}></img>
+          ) : (
+            <img className="rowImg" src={eventImage}></img>
+          )}
           <div className="userInt">
             <div className="row">
               <div className="col text-center">

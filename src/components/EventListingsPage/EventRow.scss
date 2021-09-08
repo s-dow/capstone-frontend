@@ -4,9 +4,9 @@
   margin-bottom: 3%;
 }
 
-.listImg {
-  width: 70%;
-  padding: 25px;
+.rowImg {
+  width: 100%;
+  padding: 5px;
 }
 
 .listingRow {
@@ -58,7 +58,7 @@ h5 {
 
 .desc {
   font-size: 18px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .eventTitle {
@@ -71,4 +71,22 @@ h5 {
 
 .show-link {
   font-size: 15px;
+}
+
+.rowText {
+  padding: 10px;
+  padding-right: 30px;
+}
+
+.btnList {
+  background-color: rgba(76, 84, 76, 0.85);
+  color: #dedad9;
+  border-radius: 5px 10px 5px 10px;
+  height: 45px;
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  margin-top: 15px;
+  margin-left: 35%;
 }

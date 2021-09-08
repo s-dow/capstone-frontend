@@ -51,7 +51,7 @@ export const LiveMusic = () => {
                 <div className="row">
                   <div className="col-xs-1 col-md-3">
                     <img
-                      className="listImg"
+                      className="musicImg"
                       src={musicImg}
                       alt="dinner table"
                     />

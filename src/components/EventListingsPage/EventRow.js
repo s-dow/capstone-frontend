@@ -1,6 +1,8 @@
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import listingImage from "../assets/images/dining.jpeg";
+import bikeImg from "../assets/images/bike.jpg";
+import museumImg from "../assets/images/museum.jpg";
 import { Pagination } from "../Pagination/Pagination";
 import "./EventRow.scss";
 import { useState, useEffect } from "react";
@@ -46,24 +48,24 @@ export const EventRow = (props) => {
                 key={event.eventID}
                 className="container-fluid d-flex justify-content-around listingRow"
               >
-                <div className="row d-flex justify-content-between">
+                <div className="row d-flex justify-content-between align-items-center">
                   <div className="col-lg-4">
-                    <img
-                      className="listImg"
-                      src={listingImage}
-                      alt="dinner table"
-                    />
+                    {event.tag === "bike" ? (
+                      <img className="rowImg" src={bikeImg}></img>
+                    ) : event.tag === "museum" ? (
+                      <img className="rowImg" src={museumImg}></img>
+                    ) : (
+                      <img className="rowImg" src={listingImage}></img>
+                    )}
                   </div>
-                  <div className="col-lg-6">
+                  <div className="col-lg-8 rowText">
                     <h4 className="eventTitle">{event.title}</h4>
                     <p className="desc text-center">{event.business}</p>
                     <p className="desc text-center">{event.description}</p>
                     <p className="text-center">
                       {dateFormat(event.date, "fullDate")}
                     </p>
-                  </div>
-                  <div className="col-lg-2 text-end btnCol">
-                    <button className="siteLink">
+                    <button className="btnList">
                       <a
                         href={`/events/${event.eventID}`}
                         className="show-link"
@@ -72,6 +74,7 @@ export const EventRow = (props) => {
                       </a>
                     </button>
                   </div>
+                  {/* <div className="col-lg-2 text-end btnCol"></div> */}
                 </div>
               </div>
             );

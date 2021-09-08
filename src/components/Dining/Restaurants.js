@@ -5,6 +5,8 @@ import wsbImg from "../assets/images/wsb.jpg";
 import evergreenImg from "../assets/images/evergreen.jpg";
 import edenImg from "../assets/images/eden.jpg";
 import sakanayaImg from "../assets/images/sakanaya.jpg";
+import wolffsImg from "../assets/images/wolffs.JPG";
+import glazedImg from "../assets/images/glazed.jpeg";
 import { Pagination } from "../Pagination/Pagination";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
@@ -72,6 +74,10 @@ export const Restaurants = () => {
                   <img className="card-img-top" src={sakanayaImg}></img>
                 ) : restaurant.name === "Eden" ? (
                   <img className="card-img-top" src={edenImg}></img>
+                ) : restaurant.name === "Glazed & Confused" ? (
+                  <img className="card-img-top" src={glazedImg}></img>
+                ) : restaurant.name === "Wolff's Biergarten" ? (
+                  <img className="card-img-top" src={wolffsImg}></img>
                 ) : (
                   <img className="card-img-top" src={eventImage}></img>
                 )}
